@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Temperature Converter</title>
+</head>
+<body>
+  <h1>Temperature Converter</h1>
+  
+  <label for="temperature">Enter temperature:</label>
+  <input type="number" id="temperature">
+  
+  <select id="unitFrom">
+    <option value="celsius">Celsius</option>
+    <option value="fahrenheit">Fahrenheit</option>
+    <option value="kelvin">Kelvin</option>
+  </select>
+  
+  <button onclick="convertTemperature()">Convert</button>
+  
+  <p>Result: <span id="result"></span></p>
+
+  <script>
+    function convertTemperature() {
+      const temperatureInput = document.getElementById("temperature");
+      const unitFrom = document.getElementById("unitFrom").value;
+      const resultElement = document.getElementById("result");
+      
+      const temperature = parseFloat(temperatureInput.value);
+
+      if (isNaN(temperature)) {
+        resultElement.innerText = "Please enter a valid number.";
+        return;
+      }
+
+      let convertedTemperature;
+      
+      if (unitFrom === "celsius") {
+        // Convert from Celsius to Fahrenheit and Kelvin
+        convertedTemperature = {
+          celsius: temperature,
+          fahrenheit: (temperature * 9/5) + 32,
+          kelvin: temperature + 273.15
+        };
+      } else if (unitFrom === "fahrenheit") {
+        // Convert from Fahrenheit to Celsius and Kelvin
+        convertedTemperature = {
+          celsius: (temperature - 32) * 5/9,
+          fahrenheit: temperature,
+          kelvin: (temperature - 32) * 5/9 + 273.15
+        };
+      } else if (unitFrom === "kelvin") {
+        // Convert from Kelvin to Celsius and Fahrenheit
+        convertedTemperature = {
+          celsius: temperature - 273.15,
+          fahrenheit: (temperature - 273.15) * 9/5 + 32,
+          kelvin: temperature
+        };
+      }
+
+      resultElement.innerText = `Celsius: ${convertedTemperature.celsius.toFixed(2)}°C, Fahrenheit: ${convertedTemperature.fahrenheit.toFixed(2)}°F, Kelvin: ${convertedTemperature.kelvin.toFixed(2)}K`;
+    }
+  </script>
+</body>
+</html>

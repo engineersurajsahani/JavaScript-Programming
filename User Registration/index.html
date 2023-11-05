@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Registration</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>User Registration</h1>
+
+    <form id="registrationForm" onsubmit="return validateForm()" action="#" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <span class="error" id="nameError"></span>
+
+        <br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <span class="error" id="emailError"></span>
+
+        <br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <span class="error" id="passwordError"></span>
+
+        <br>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+        <br>
+        <span class="error" id="confirmPasswordError"></span>
+
+        <br>
+
+        <input type="submit" value="Register">
+    </form>
+
+    <script>
+        function validateForm() {
+            // Get input values
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+
+            // Reset error messages
+            document.getElementById("nameError").textContent = "";
+            document.getElementById("emailError").textContent = "";
+            document.getElementById("passwordError").textContent = "";
+            document.getElementById("confirmPasswordError").textContent = "";
+
+            // Validate name
+            if (name.trim() === "") {
+                document.getElementById("nameError").textContent = "Name is required";
+                return false;
+            }
+
+            // Validate email
+            if (!email.match(/^\S+@\S+\.\S+$/)) {
+                document.getElementById("emailError").textContent = "Invalid email address";
+                return false;
+            }
+
+            // Validate password
+            if (password.length < 8) {
+                document.getElementById("passwordError").textContent = "Password must be at least 8 characters";
+                return false;
+            }
+
+            // Confirm password
+            if (password !== confirmPassword) {
+                document.getElementById("confirmPasswordError").textContent = "Passwords do not match";
+                return false;
+            }
+
+            alert("Registration is successfull");
+
+            return true;
+        }
+    </script>
+</body>
+</html>
