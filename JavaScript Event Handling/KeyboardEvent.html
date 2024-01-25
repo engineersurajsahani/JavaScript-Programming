@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Event</title>
+</head>
+<body>
+    Enter your name :- <input type="text" onkeyup="keyup()">
+    <br><br>
+    Enter your name :- <input type="text" onkeydown="keydown()">
+    <br><br>
+    Enter your name :- <input type="text" onkeypress="keypress()">
+    <br><br>
+    <input type="button" value="Click Me" onclick="clickme()">
+    <br><br>
+    <input type="button" value="Double Click Me" onclick="dbclick()">
+
+    <script>
+        function keyup(){
+            alert("Key Up Event Occur!!!");
+        }
+        function keydown(){
+            alert("Key Down Event Occur!!!");
+        }
+        function keypress(){
+            alert("Key Press Event Occur!!!");
+        }
+        function clickme(){
+            alert("Click Event Occur!!!");
+        }
+        function dbclick(){
+            alert("Double Click Event Occur!!!");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Object</title>
+</head>
+<body>
+    <script>
+
+        var txt="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+        document.write(txt.length+"<br>");
+
+        var x='It\'s alright';
+        var y="We are the so-called \"Vikings\" from the north.";
+        document.write(x+"<br>"+y+"<br>");
+
+        var str="Please locate where 'locate' occurs!";
+        var pos=str.indexOf("locate");
+        document.write(pos+"<br>");
+
+        var str="Please locate where 'locate' occurs!";
+        var pos=str.lastIndexOf("locate");
+        document.write(pos+"<br>");
+
+        var str="Please locate where 'locate' occurs!";
+        var pos=str.search("locate");
+        document.write(pos+"<br>");
+
+        var str="Apple, Banana, Kiwi";
+        var res=str.slice(7,13);
+        document.write(res+"<br>");
+
+        var str="Apple, Banana, Kiwi";
+        var res=str.substring(7,13);
+        document.write(res+"<br>");
+
+        var str="Apple, Banana, Kiwi";
+        var res=str.substr(7,6);
+        document.write(res+"<br>");
+
+        var str="Please visit School!";
+        var res=str.replace("School","College");
+        document.write(res+"<br>");
+
+        var str="Please visit School!";
+        var res=str.toUpperCase();
+        document.write(res+"<br>");
+
+        var str="Please visit School!";
+        var res=str.toLowerCase();
+        document.write(res+"<br>");
+
+        var t1="Suraj";
+        var t2="Sahani";
+        var t3=t1.concat(" ",t2);
+        document.write(t3+"<br>");
+
+        document.write(str.charAt(0)+"<br>");
+
+        var txt="a,b,c,d,e";
+        var arr=txt.split(",");
+        document.write(arr[0]+" "+arr[2]);
+
+    </script>
+</body>
+</html>

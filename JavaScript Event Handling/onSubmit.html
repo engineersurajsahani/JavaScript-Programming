@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onSubmit</title>
+</head>
+<body>
+    <form name="myForm" action="http://www.mu.ac.in/" onsubmit="confirmInput()">
+        Enter your name : <input type="text" name="fname" size="20">
+        <input type="submit">
+    </form>
+
+    <script>
+        function confirmInput(){
+            var name=document.forms["myForm"]["fname"].value;
+            alert("Hello "+name+" ! You will now be redirected to Mumbai University Website");
+        }
+    </script>
+</body>
+</html>
